@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>CNFP 2017</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<!-- <link rel="stylesheet" href="../css/leaflet.css"/> -->
+	<link rel="stylesheet" href="../mapas/css/leaflet.wmslegend.css"/>
+	<link rel="stylesheet" href="../mapas/css/leaflet.zoomdisplay.css"/>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+            background: white;
+        }
+    </style>
+
+
+	
+</head>
+<body>
+
+
+<div id="map"> </div>
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+<!-- <script src="../js/leaflet.js"></script> -->
+<script src="../mapas/js/leaflet.zoomdisplay.js"></script>
+<script src="../mapas/js/leaflet.wmslegend.js"></script>
+
+<script type="text/javascript">
+
+	var map = L.map('map', {
+		center: [-15, -55],
+		zoom: 5,
+ 		minZoom: 2,
+        	maxZoom: 18
+	});
+
+
+		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: '  Serviço Florestal Brasileiro <a href="www.florestal.gov.br">SFB</a>'+' Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>' ,
+		id: 'mapbox.streets'
+	}).addTo(map);
+
+
+	var wmsLayer = L.tileLayer.wms('http://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+		layers:'CNFP_orig:cnfp_2017',
+		transparent:true,
+		format: 'image/png'		
+	}).addTo(map);
+
+
+
+        var concLayer = L.tileLayer.wms('http://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:cnfp2016_concessoes',
+                transparent:true,
+                format: 'image/png'
+        }).addTo(map);
+
+        var upaLayer = L.tileLayer.wms('http://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:upas_exploradas_201806',
+                transparent:true,
+                format: 'image/png'
+        }).addTo(map);
+
+
+
+
+
+
+uri = "http://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?service=WMS&version=1.1.0&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=30&HEIGHT=35&layer=CNFP_orig:cnfp_2017",
+    L.wmsLegend(uri);
+	
+
+
+uri = "http://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?service=WMS&version=1.1.0&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=30&HEIGHT=35&layer=CNFP_orig:cnfp2016_concessoes",
+    L.wmsLegend(uri);
+
+
+	
+
+	
+</script>
+
+</body>
+</html>
+
+
+
