@@ -38,24 +38,28 @@
 	var cadastros = L.layerGroup();
 	var florestas = L.layerGroup();
 
-var    wmsLayer_rvn = L.tileLayer.wms('http://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
-                layers:'CNFP_orig:atlas_02_remanesc',
+var    wmsLayer_rvn = L.tileLayer.wms('http://sistemas.florestal.gov.br/geoserver/sfb_car/wms?', {
+                layers:'sfb_car:tema_simp_2_rvn',
                 transparent:true,
                 format: 'image/png'             
         }).addTo(car_ambiental);
 
-        var wmsLayer_app = L.tileLayer.wms('http://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
-                layers:'CNFP_orig:atlas_30_app',
+        var wmsLayer_app = L.tileLayer.wms('http://sistemas.florestal.gov.br/geoserver/sfb_car/wms?', {
+                layers:'sfb_car:tema_simp_30_app',
                 transparent:true,
                 format: 'image/png'             
         }).addTo(car_ambiental);
 
-        var wmsLayer_rl = L.tileLayer.wms('http://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
-                layers:'CNFP_orig:atlas_32_rl',
+        var wmsLayer_rl = L.tileLayer.wms('http://sistemas.florestal.gov.br/geoserver/sfb_car/wms?', {
+                layers:'sfb_car:tema_simp_32_rl',
                 transparent:true,
                 format: 'image/png'             
         }).addTo(car_ambiental);
 
+
+       var wms_arcgis = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+				            	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+			})
 
 
        var wmsLayer_nasc = L.tileLayer.wms('http://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
@@ -79,8 +83,8 @@ var    wmsLayer_rvn = L.tileLayer.wms('http://sistemas.florestal.gov.br/geoserve
 		format: 'image/png'		
 	}).addTo(cadastros);
 
-	var car = L.tileLayer.wms('http://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
-		layers:'CNFP_orig:atlas_26_imovel',
+	var car = L.tileLayer.wms('http://sistemas.florestal.gov.br/geoserver/sfb_car/wms?', {
+		layers:'sfb_car:tema_simp_26_perimetro',
 		transparent:true,
 		format: 'image/png'		
 	}).addTo(cadastros);
@@ -246,6 +250,7 @@ var    wmsLayer_rvn = L.tileLayer.wms('http://sistemas.florestal.gov.br/geoserve
         var baseLayers = {
                 "OSM-Ruas": streets,
                 "OSM-Tons de Cinza": grayscale,
+		"ESRI Arcgis base": wms_arcgis,
 
         };
 
@@ -279,5 +284,3 @@ uri = "http://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?service=WMS&vers
 
 </body>
 </html>
-
-
