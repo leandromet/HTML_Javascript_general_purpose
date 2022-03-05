@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Mapa Interativo RIMA</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="css/leaflet.css" crossorigin=""/>
+
+    <link rel="stylesheet" href="css/leaflet.wmslegend.css"/>
+    <link rel="stylesheet" href="css/leaflet.zoomdisplay.css"/>
+    <script src="js/leaflet.js" crossorigin=""></script>
+<script src="js/leaflet.zoomdisplay.js"></script>
+<script src="js/leaflet.wmslegend.js"></script>
+    <style>
+        html, body, #map {
+            height: 92%;
+            width: 100%;
+            background: white;
+        }
+        
+    </style>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-spacing: 20px;
+  border-collapse: collapse;
+  margin:20px;
+}
+</style>
+
+
+<script type="text/javascript">
+function getCheckedCheckboxesFor(checkboxName) {
+    var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
+    Array.prototype.forEach.call(checkboxes, function(el) {
+        values.push(el.value);
+    });
+    return values;
+}
+</script>
+
+
+
+    
+</head>
+<body>
+
+<div id='map'></div>
+
+<script>
+
+
+       var wms_arcgis = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+            })
+
+        var result_flora = L.tileLayer.wms('http://rede.inma.gov.br/geoserver/rima/wms?', {
+                layers:'rima:pontos_flora',
+                transparent:true,
+                format: 'image/png'
+        });
+        var result_fauna = L.tileLayer.wms('http://rede.inma.gov.br/geoserver/rima/wms?', {
+                layers:'rima:pontos_fauna',
+                transparent:true,
+                format: 'image/png'
+        });
+
+        var es_rios = L.tileLayer.wms('http://rede.inma.gov.br/geoserver/rima/wms?', {
+                layers:'rima:rios_principais_es',
+                transparent:true,
+                format: 'image/png'
+        });
+
+
+    var streets = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 20,
+        attribution: '  Instituto Nacional da Mata Atlântica <a href="www.inma.gov.br">INMA</a>'+' Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>' ,
+        id: 'mapbox.streets'
+    });
+
+        var grayscale   = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 20,
+        attribution: '  Instituto Nacional da Mata Atlântica <a href="www.inma.gov.br">INMA</a>'+' Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>' ,
+        id: 'mapbox.light'
+    });
+
+
+
+function updateParams() {
+    var x = getCheckedCheckboxesFor('Class');
+    var filter = "class like '" + x + "'";
+    return result_fauna.setParams({CQL_FILTER:filter});
+}
+
+function updateParams2() {
+    var y = getCheckedCheckboxesFor('Ordem');
+    var filter = "ordem like '" + y + "'";
+    return result_fauna.setParams({CQL_FILTER:filter});
+}
+
+
+
+    var map = L.map('map', {
+        center: [-19.7, -40.6],
+        zoom: 8,
+        minZoom: 4,
+            maxZoom: 20,
+        layers: [grayscale, streets]
+    });
+
+
+
+var overlays = {
+                "Resultados Flora RIMA": result_flora,
+                "Resultados Fauna RIMA": result_fauna,
+
+               }; 
+  var overlays2 = {
+                "Rios do ES": es_rios,
+
+
+                };
+
+
+ 
+
+        var baseLayers = {
+                "OSM-Ruas": streets,
+                "OSM-Tons de Cinza": grayscale,
+        "ESRI Arcgis base": wms_arcgis,
+
+        };
+
+        var baseLayers2 = {
+
+        };
+
+        var baseLayers3 = {
+
+        };
+
+
+var logo = L.control({position: 'topright'});
+    logo.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'logo');
+        div.innerHTML = "<a href='http://www.inma.gov.br'><img src='http://inma.gov.br/wp-content/themes/portalpadrao/img/logo.jpg' height='30px'/></a>";
+        return div;
+    };
+    logo.addTo(map);
+        L.control.layers(baseLayers, overlays).addTo(map);
+        L.control.layers(baseLayers, overlays2).addTo(map);
+
+    map.addLayer(result_fauna);
+  
+
+uri = "http://rede.inma.gov.br/geoserver/rima/wms?service=WMS&version=1.1.0&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=30&HEIGHT=20&layer=rima:pontos_fauna",
+    L.wmsLegend(uri);
+
+
+</script>
+
+
+<script>
+function onlyOne(checkbox) {
+    var checkboxes = document.getElementsByName('Class')
+    checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false
+    })
+    var checkboxes2 = document.getElementsByName('Ordem')
+    checkboxes2.forEach((item2) => {
+          item2.checked = false
+    })
+}
+</script>
+
+<script>
+function onlyOne2(checkbox) {
+    var checkboxes2 = document.getElementsByName('Ordem')
+    checkboxes2.forEach((item2) => {
+        if (item2 !== checkbox) item2.checked = false 
+    })
+    var checkboxes = document.getElementsByName('Class')
+    checkboxes.forEach((item) => {
+        item.checked = false
+    })
+}
+</script>
+
+
+<div class="data">   
+ <h3>Reino Animalia, selecionar Class:</h3>
+  <input type="button" value="Filtrar Class" onclick="updateParams()">
+ <span>
+    <input name="Class" type="checkbox" value="%" onclick="onlyOne(this)" />
+    <label for="Class">Todos</label>
+    </span>
+    <br> 
+    <table style="width:100%" align="left">
+         <tr>
+<th align="left"><span>    <input name="Class" type="checkbox" value="Actinopterygii"   onclick="onlyOne(this)"/>    <label for="Class">Actinopterygii</label>    </span></th>
+<th align="left"><span>    <input name="Class" type="checkbox" value="Amphibia"   onclick="onlyOne(this)"/>    <label for="Class">Amphibia</label>    </span></th>
+<th align="left"><span>    <input name="Class" type="checkbox" value="Arachnida"   onclick="onlyOne(this)"/>    <label for="Class">Arachnida</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Class" type="checkbox" value="Aves"   onclick="onlyOne(this)"/>    <label for="Class">Aves</label>    </span></th>
+<th align="left"><span>    <input name="Class" type="checkbox" value="Chondrichthyes"   onclick="onlyOne(this)"/>    <label for="Class">Chondrichthyes</label>    </span></th>
+<th align="left"><span>    <input name="Class" type="checkbox" value="Entognatha"   onclick="onlyOne(this)"/>    <label for="Class">Entognatha</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Class" type="checkbox" value="Insecta"   onclick="onlyOne(this)"/>    <label for="Class">Insecta</label>    </span></th>
+<th align="left"><span>    <input name="Class" type="checkbox" value="Malacostraca"   onclick="onlyOne(this)"/>    <label for="Class">Malacostraca</label>    </span></th>
+<th align="left"><span>    <input name="Class" type="checkbox" value="Mammalia"   onclick="onlyOne(this)"/>    <label for="Class">Mammalia</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Class" type="checkbox" value="Reptilia"   onclick="onlyOne(this)"/>    <label for="Class">Reptilia</label>    </span></th>
+<th align="left"><span>    <input name="Class" type="checkbox" value="Secernentea"   onclick="onlyOne(this)"/>    <label for="Class">Secernentea</label>    </span></th>
+</tr>
+</table>
+
+    
+</div>
+ <br>
+<div class="data">   
+
+ <h3><br>Reino Animalia, selecionar Ordem: <span>
+    <input name="Ordem" type="checkbox" value="%" onclick="onlyOne2(this)" />
+    <label for="Ordem">Todos</label>
+ </span> </h3>  
+ <br>
+ <b>
+ <input type="button" value="Filtrar Ordem" onclick="updateParams2()"> Actinopterygii: </b>
+        <table style="width:100%" align="left">
+         <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Anguilliformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Anguilliformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Atheriniformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Atheriniformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Beloniformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Beloniformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Beryciformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Beryciformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Characiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Characiformes</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Clupeiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Clupeiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Cyprinodontiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Cyprinodontiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Elopiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Elopiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Gymnotiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Gymnotiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Mugiliformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Mugiliformes</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Perciformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Perciformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Pleuronectiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Pleuronectiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Scorpaeniformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Scorpaeniformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Siluriformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Siluriformes</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Synbranchiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Synbranchiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Syngnathiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Syngnathiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Tetraodontiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Tetraodontiformes</label>    </span></th>
+</tr>
+</table>
+<b> <br> <input type="button" value="Filtrar Ordem" onclick="updateParams2()"> Amphibia:</b> 
+    <table style="width:100%" align="left">
+         <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Anura"   onclick="onlyOne2(this)"/>    <label for="Ordem">Anura</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Gymnophiona"   onclick="onlyOne2(this)"/>    <label for="Ordem">Gymnophiona</label>    </span></th>
+</tr>
+</table>
+  <b> <br><input type="button" value="Filtrar Ordem" onclick="updateParams2()"> Arachnida:</b>
+
+    <table style="width:100%" align="left">
+         <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Acarina"   onclick="onlyOne2(this)"/>    <label for="Ordem">Acarina</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Araneae"   onclick="onlyOne2(this)"/>    <label for="Ordem">Araneae</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Pseudoscorpiones"   onclick="onlyOne2(this)"/>    <label for="Ordem">Pseudoscorpiones</label>    </span></th>
+</tr>
+</table>
+
+
+<b><br><input type="button" value="Filtrar Ordem" onclick="updateParams2()"> Aves:</b>
+    <table style="width:100%" align="left">
+         <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Accipitriformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Accipitriformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Anseriformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Anseriformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Apodiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Apodiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Caprimulgiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Caprimulgiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Cariamiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Cariamiformes</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Cathartiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Cathartiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Charadriiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Charadriiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Ciconiiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Ciconiiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Columbiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Columbiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Coraciiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Coraciiformes</label>    </span></th>
+</tr><tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Cuculiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Cuculiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Falconiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Falconiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Galliformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Galliformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Gruiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Gruiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Passeriformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Passeriformes</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Pelecaniformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Pelecaniformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Piciformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Piciformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Podicipediformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Podicipediformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Procellariiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Procellariiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Psittaciformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Psittaciformes</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Sphenisciformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Sphenisciformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Strigiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Strigiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Suliformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Suliformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Tinamiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Tinamiformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Trogoniformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Trogoniformes</label>    </span></th>
+</tr>
+</table>
+<b><br><input type="button" value="Filtrar Ordem" onclick="updateParams2()">  Chondrichthyes/Entognatha:</b>
+    <table style="width:100%" align="left">
+         <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Carcharhiniformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Carcharhiniformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Rhinopristiformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Rhinopristiformes</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Torpediniformes"   onclick="onlyOne2(this)"/>    <label for="Ordem">Torpediniformes</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Collembola"   onclick="onlyOne2(this)"/>    <label for="Ordem">Ent. | Collembola</label>    </span></th>
+</tr>
+</table>
+<b><br><input type="button" value="Filtrar Ordem" onclick="updateParams2()"> Insecta:</b> 
+    <table style="width:100%" align="left">
+         <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Coleoptera"   onclick="onlyOne2(this)"/>    <label for="Ordem">Coleoptera</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Diptera"   onclick="onlyOne2(this)"/>    <label for="Ordem">Diptera</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Ephemeroptera"   onclick="onlyOne2(this)"/>    <label for="Ordem">Ephemeroptera</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Hemiptera"   onclick="onlyOne2(this)"/>    <label for="Ordem">Hemiptera</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Homoptera"   onclick="onlyOne2(this)"/>    <label for="Ordem">Homoptera</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Hymenoptera"   onclick="onlyOne2(this)"/>    <label for="Ordem">Hymenoptera</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Isoptera"   onclick="onlyOne2(this)"/>    <label for="Ordem">Isoptera</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Lepidoptera"   onclick="onlyOne2(this)"/>    <label for="Ordem">Lepidoptera</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Neuroptera"   onclick="onlyOne2(this)"/>    <label for="Ordem">Neuroptera</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Odonata"   onclick="onlyOne2(this)"/>    <label for="Ordem">Odonata</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Orthoptera"   onclick="onlyOne2(this)"/>    <label for="Ordem">Orthoptera</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Siphonaptera"   onclick="onlyOne2(this)"/>    <label for="Ordem">Siphonaptera</label>    </span></th>
+</tr>
+</table>
+ <b><br><input type="button" value="Filtrar Ordem" onclick="updateParams2()"> Malacostraca/Mammalia:</b>
+
+    <table style="width:100%" align="left">
+         <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Decapoda"   onclick="onlyOne2(this)"/>    <label for="Ordem">Mal. | Decapoda</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Artiodactyla"   onclick="onlyOne2(this)"/>    <label for="Ordem">Artiodactyla</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Carnivora"   onclick="onlyOne2(this)"/>    <label for="Ordem">Carnivora</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Cetacea"   onclick="onlyOne2(this)"/>    <label for="Ordem">Cetacea</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Chiroptera"   onclick="onlyOne2(this)"/>    <label for="Ordem">Chiroptera</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Cingulata"   onclick="onlyOne2(this)"/>    <label for="Ordem">Cingulata</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Didelphimorphia"   onclick="onlyOne2(this)"/>    <label for="Ordem">Didelphimorphia</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Lagomorpha"   onclick="onlyOne2(this)"/>    <label for="Ordem">Lagomorpha</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Marsupialia"   onclick="onlyOne2(this)"/>    <label for="Ordem">Marsupialia</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Perissodactyla"   onclick="onlyOne2(this)"/>    <label for="Ordem">Perissodactyla</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Pilosa"   onclick="onlyOne2(this)"/>    <label for="Ordem">Pilosa</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Primates"   onclick="onlyOne2(this)"/>    <label for="Ordem">Primates</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Rodentia"   onclick="onlyOne2(this)"/>    <label for="Ordem">Rodentia</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Xenarthra"   onclick="onlyOne2(this)"/>    <label for="Ordem">Xenarthra</label>    </span></th>
+</tr>
+</table>
+<b><br><input type="button" value="Filtrar Ordem" onclick="updateParams2()"> Reptilia/Secernentea:</b> 
+    <table style="width:100%" align="left">
+         <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Crocodylia"   onclick="onlyOne2(this)"/>    <label for="Ordem">Crocodylia</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Squamata"   onclick="onlyOne2(this)"/>    <label for="Ordem">Squamata</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Testudinata"   onclick="onlyOne2(this)"/>    <label for="Ordem">Testudinata</label>    </span></th>
+ </tr>
+ <tr>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Testudines"   onclick="onlyOne2(this)"/>    <label for="Ordem">Testudines</label>    </span></th>
+<th align="left"><span>    <input name="Ordem" type="checkbox" value="Strongylida"   onclick="onlyOne2(this)"/>    <label for="Ordem">Sec. | Strongylida</label>    </span></th>
+</tr>
+
+
+    
+</div>
+
+
+
+
+</body>
+</html>

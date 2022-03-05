@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://sistemas.florestal.gov.br/mapas/sdi.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Mapa Interativo Cadastral</title>
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="https://sistemas.florestal.gov.br/mapas/docs/images/favicon.ico">
+
+    <link rel="stylesheet" href="./MapaInterativoCadastral_files/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="">
+
+	<link rel="stylesheet" href="./MapaInterativoCadastral_files/leaflet.wmslegend.css">
+	<link rel="stylesheet" href="./MapaInterativoCadastral_files/leaflet.zoomdisplay.css">
+    <script src="./MapaInterativoCadastral_files/leaflet.js.download" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+<script src="./MapaInterativoCadastral_files/leaflet.zoomdisplay.js.download"></script>
+<script src="./MapaInterativoCadastral_files/leaflet.wmslegend.js.download"></script>
+
+	<style>
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+            background: white;
+        }
+		
+	</style>
+
+	
+</head>
+<body>
+
+<div id="map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative; outline: none;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 2; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 20; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(6).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(7).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(6).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(7).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(6).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(7).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(6).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(7).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(6).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(7).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, 889px, 0px); opacity: 1;"></div></div><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 20; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(8).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(9).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(8).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(9).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(8).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(9).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(10).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(11).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(10).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(11).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(10).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(11).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(8).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(9).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(8).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(9).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(10).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(11).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(12).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(13).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(10).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(11).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(12).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(13).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(12).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(13).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(12).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(13).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(12).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(13).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(14).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/17(15).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(14).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/16(15).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(14).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/18(15).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(14).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/15(15).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(14).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/19(15).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, 889px, 0px); opacity: 1;"></div></div><div class="leaflet-layer " style="z-index: 8; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(6).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(7).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(8).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(9).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(10).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(11).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(12).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(13).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(14).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(667px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(15).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(923px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(16).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(17).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(18).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(19).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(20).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(411px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(21).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1179px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(22).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(23).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(24).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(25).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(26).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(27).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(28).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(155px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(29).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1435px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(30).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(31).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(32).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(33).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(34).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(35).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(36).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(37).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(38).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-101px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2018_final(39).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1691px, 889px, 0px); opacity: 1;"></div></div><div class="leaflet-layer " style="z-index: 8; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(667px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(1).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(923px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(2).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(667px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(3).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(923px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(4).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(667px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(5).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(923px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(6).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(411px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(7).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1179px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(8).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(411px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(9).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1179px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(10).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(411px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(11).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1179px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(12).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(667px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(13).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(923px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(14).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(667px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(15).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(923px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(16).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(411px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(17).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1179px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(18).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(155px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(19).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1435px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(20).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(411px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(21).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1179px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(22).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(155px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(23).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1435px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(24).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(155px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(25).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1435px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(26).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(155px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(27).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1435px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(28).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(155px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(29).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1435px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(30).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(-101px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(31).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1691px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(32).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(-101px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(33).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1691px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(34).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(-101px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(35).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1691px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(36).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(-101px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(37).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1691px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(38).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(-101px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/sfb_car-atlas_26_imovel(39).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1691px, 889px, 0px); opacity: 1;"></div></div><div class="leaflet-layer " style="z-index: 5; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(667px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(1).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(923px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(2).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(667px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(3).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(923px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(4).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(667px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(5).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(923px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(6).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(411px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(7).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1179px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(8).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(411px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(9).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1179px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(10).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(411px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(11).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1179px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(12).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(667px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(13).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(923px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(14).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(667px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(15).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(923px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(16).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(411px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(17).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1179px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(18).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(155px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(19).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1435px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(20).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(411px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(21).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1179px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(22).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(155px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(23).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1435px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(24).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(155px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(25).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1435px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(26).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(155px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(27).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1435px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(28).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(155px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(29).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1435px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(30).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(-101px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(31).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1691px, 377px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(32).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(-101px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(33).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1691px, 121px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(34).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(-101px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(35).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1691px, 633px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(36).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(-101px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(37).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1691px, -135px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(38).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(-101px, 889px, 0px); opacity: 1;"><img alt="" role="presentation" src="./MapaInterativoCadastral_files/CNFP_orig-cnfp2016_concessoes(39).png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1691px, 889px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="https://sistemas.florestal.gov.br/mapas/sdi.html#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="https://sistemas.florestal.gov.br/mapas/sdi.html#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"><div class="logo leaflet-control"><a href="http://www.florestal.gov.br/"><img src="./MapaInterativoCadastral_files/logosfb_p.png" height="30px"></a></div><div class="leaflet-control-layers leaflet-control" aria-haspopup="true"><a class="leaflet-control-layers-toggle" href="https://sistemas.florestal.gov.br/mapas/sdi.html#" title="Layers"></a><form class="leaflet-control-layers-list"><div class="leaflet-control-layers-base"><label><div><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers" checked="checked"><span> OSM-Ruas</span></div></label><label><div><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers" checked="checked"><span> OSM-Tons de Cinza</span></div></label><label><div><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers"><span> ESRI Arcgis base</span></div></label></div><div class="leaflet-control-layers-separator"></div><div class="leaflet-control-layers-overlays"><label><div><input type="checkbox" class="leaflet-control-layers-selector" checked=""><span> CNFP-Flor.Publicas 2018</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector" checked=""><span> SFB - Concessoes</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> SFB - UPAs Exploradas</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector" checked=""><span> CAR - Imoveis Rurais</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CAR - Nascentes</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CAR - Nasc. Class. RVN</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CAR-Reman. de Vegetação</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CAR-Reserva Legal</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CAR-Area de Pres. Permanente</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> MAPA - ABC - Pontos</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> MAPA - ABC - Imoveis CAR</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> MAPA - ABC - Buffer 1Km</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> MAPA - ABC - Imoveis CAR 1km</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> IBGE-Limites Estaduais</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> IBGE-Biomas</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> IBGE-Limites Municipais</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> INCRA - Sigef</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> INCRA - SNCI</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> Embrapa - Rodovias</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> Embrapa - Ferrovias</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> Embrapa - Hidrovias</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> Embrapa - Relevo</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> Embrapa - Solos</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> Embrapa - Uso Solo</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> Embrapa - Precipitacao Anual</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> Embrapa - Pivos 2013</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> ANA - Unid. Plan. Hidrico</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> Serfal/Sigef-Glebas Públicas</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CNFP-Flor. Publ. Destinadas</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CNFP-Flor. Publ. Não Destinadas</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CNFP-Terras Indígenas</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CNFP-UCs Federais</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CNFP-UCs Estaduais</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> IFN - Conglomerados</span></div></label></div></form></div><div class="leaflet-control-layers leaflet-control" aria-haspopup="true"><a class="leaflet-control-layers-toggle" href="https://sistemas.florestal.gov.br/mapas/sdi.html#" title="Layers"></a><form class="leaflet-control-layers-list"><div class="leaflet-control-layers-base"><label><div><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers" checked="checked"><span> OSM-Ruas</span></div></label><label><div><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers" checked="checked"><span> OSM-Tons de Cinza</span></div></label><label><div><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers"><span> ESRI Arcgis base</span></div></label></div><div class="leaflet-control-layers-separator"></div><div class="leaflet-control-layers-overlays"><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CNFP-Flor.Publicas 2018</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CNFP-Flor.Publicas 2017</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CNFP-Flor.Publicas 2016</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CNFP-Flor.Publicas 2015</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CNFP-Flor.Publicas 2014</span></div></label></div></form></div><div class="leaflet-control-layers leaflet-control" aria-haspopup="true"><a class="leaflet-control-layers-toggle" href="https://sistemas.florestal.gov.br/mapas/sdi.html#" title="Layers"></a><form class="leaflet-control-layers-list"><div class="leaflet-control-layers-base"><label><div><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers" checked="checked"><span> OSM-Ruas</span></div></label><label><div><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers" checked="checked"><span> OSM-Tons de Cinza</span></div></label><label><div><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers"><span> ESRI Arcgis base</span></div></label></div><div class="leaflet-control-layers-separator"></div><div class="leaflet-control-layers-overlays"><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> NASA-NDVI MODIS</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> NASA-Area Foliar</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> NASA-Chuva do Mes</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> NASA-Dens. Populacao</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CNFP e CAR</span></div></label><label><div><input type="checkbox" class="leaflet-control-layers-selector"><span> CAR Ambiental-RVN/RL/APP</span></div></label></div></form></div><div class="leaflet-control-wms-legend leaflet-control"><img class="wms-legend" src="./MapaInterativoCadastral_files/geoserver-GetLegendGraphic.image" alt="Legend"></div><div class="leaflet-control-wms-legend leaflet-control"><img class="wms-legend" src="./MapaInterativoCadastral_files/geoserver-GetLegendGraphic(1).image" alt="Legend"></div><div class="leaflet-control-wms-legend leaflet-control"><img class="wms-legend" src="./MapaInterativoCadastral_files/geoserver-GetLegendGraphic(2).image" alt="Legend"></div></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> |   Serviço Florestal Brasileiro <a href="https://sistemas.florestal.gov.br/mapas/www.florestal.gov.br">SFB</a> Map data © <a href="http://openstreetmap.org/">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com/">Mapbox</a></div></div></div></div>
+
+<script>
+	var car_ambiental = L.layerGroup();
+	var cadastros = L.layerGroup();
+	var florestas = L.layerGroup();
+	var cnfp_historico = L.layerGroup();
+
+
+
+var    wmsLayer_rvn = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/sfb_car/wms?', {
+                layers: 'sfb_car:atlas_2_rvn',
+                transparent:true,
+                format: 'image/png'             
+        }).addTo(car_ambiental);
+
+        var wmsLayer_app = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/sfb_car/wms?', {
+                layers:'sfb_car:atlas_30_app',
+                transparent:true,
+                format: 'image/png'             
+        }).addTo(car_ambiental);
+
+        var wmsLayer_rl = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/sfb_car/wms?', {
+                layers:'sfb_car:atlas_32_rl',
+                transparent:true,
+                format: 'image/png'             
+        }).addTo(car_ambiental);
+
+
+       var wms_arcgis = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+				            	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+			})
+
+
+       var wmsLayer_nasc = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:atlas_15_nasc',
+                transparent:true,
+                format: 'image/png'             
+        }).addTo(car_ambiental);
+
+
+       var wmsLayer_nasc_c = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:nascentes',
+                transparent:true,
+                format: 'image/png'             
+        }).addTo(car_ambiental);
+
+
+
+        var cnfp = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:cnfp2018_final',
+                transparent:true,
+                format: 'image/png'
+        }).addTo(cadastros);
+
+
+
+
+
+        var cnfp2018 = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:cnfp2018_final',
+                transparent:true,
+                opacity: 0.6,
+                format: 'image/png'
+        }).addTo(cnfp_historico);
+
+
+
+	var cnfp2017 = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+		layers:'CNFP_orig:cnfp2017_final',
+		transparent:true,
+		opacity: 0.6,
+		format: 'image/png'		
+	}).addTo(cnfp_historico);
+
+
+        var cnfp2016 = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:cnfp2016_cad',
+                transparent:true,
+                opacity: 0.6,
+                format: 'image/png'
+        }).addTo(cnfp_historico);
+
+
+        var cnfp2015 = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:cnfp2015',
+                transparent:true,
+                opacity: 0.6,
+                format: 'image/png'
+        }).addTo(cnfp_historico);
+
+
+        var cnfp2014 = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:cnfp2014',
+                transparent:true,
+                opacity: 0.6,
+                format: 'image/png'
+        }).addTo(cnfp_historico);
+
+
+
+
+
+
+
+	var car = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/sfb_car/wms?', {
+		layers:'sfb_car:atlas_26_imovel',
+		transparent:true,
+		format: 'image/png'		
+	}).addTo(cadastros);
+
+	var tipoA = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+		layers:'CNFP_orig:cnfp2017_tipo_a',
+		sparent:true,
+		format: 'image/png'		
+	}).addTo(florestas);
+
+
+	var tipoB = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+		layers:'CNFP_orig:cnfp2017_tipo_b',
+		transparent:true,
+		format: 'image/png'		
+	}).addTo(florestas);
+
+	var cnfp_ti = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+		layers:'CNFP_orig:cnfp2017_ti',
+		transparent:true,
+		format: 'image/png'		
+	});
+
+	var cnfp_ucfed = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+		layers:'CNFP_orig:cnfp2017_tipo_ucfed',
+		transparent:true,
+		format: 'image/png'		
+	});
+
+
+
+        var wms_glebas = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:glebaspublicas_sigef_e_serfal',
+                transparent:true,
+                format: 'image/png'
+        });
+
+
+	var cnfp_ucest = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+		layers:'CNFP_orig:cnfp2017_tipo_ucest',
+		transparent:true,
+		format: 'image/png'		
+	});
+
+
+        var estados = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:sicar_uf2015',
+                transparent:true,
+                format: 'image/png'             
+        });
+
+
+        var municipios = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:sicar_munic2015',
+                transparent:true,
+                format: 'image/png'             
+        });
+
+
+        var sigef = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:sigef2018',
+                transparent:true,
+                format: 'image/png'
+        });
+
+        var snci = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:snci2018',
+                transparent:true,
+                format: 'image/png'
+        });
+
+
+        var emb_prec_anual = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:prec_anual_br_int',
+                transparent:true,
+                format: 'image/png'
+        });
+
+
+
+
+        var emb_relevo = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'emb_srtm_brasil_relevo_30m',
+                transparent:true,
+                format: 'image/png'
+        });
+
+        var emb_rodovias = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'embrapa_st_rodovia',
+                transparent:true,
+                format: 'image/png'
+        });
+
+
+        var emb_ferrovia = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'embrapa_ferrovia',
+                transparent:true,
+                format: 'image/png'
+        });
+
+
+        var emb_hidrovia = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'embrapa_hidrovia',
+                transparent:true,
+                format: 'image/png'
+        });
+
+
+
+
+
+
+
+        var emb_solos = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'embrapa_solos',
+                transparent:true,
+                format: 'image/png'
+        });
+
+
+        var emb_uso_solo = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'emb_ibge_uso2010_br_mural',
+                transparent:true,
+                format: 'image/png'
+        });
+
+
+        var emb_pivos2013 = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'embrapa_pivos2013',
+                transparent:true,
+                format: 'image/png'
+        });
+
+
+
+        var emb_terraclass = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'embrapa_terraclass_cerrado_2013',
+                transparent:true,
+                format: 'image/png'
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var abc_pontos = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/sfb_car/wms?', {
+                layers:'abc_pt',
+                transparent:true,
+                format: 'image/png'
+        });
+
+        var abc_buffer = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/sfb_car/wms?', {
+                layers:'abc_bu',
+                transparent:true,
+                format: 'image/png'
+        });
+        var abc_imoveis = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/sfb_car/wms?', {
+                layers:'abc_ir2',
+                transparent:true,
+                format: 'image/png'
+        });
+
+
+
+
+
+
+    	var abc_pt_car = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/sfb_car/wms?', {
+                layers:'abc_pt_car',
+                transparent:true,
+                format: 'image/png'
+        });  
+
+	var concLayer = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:cnfp2016_concessoes',
+                transparent:true,
+                format: 'image/png'
+        });
+
+        var upaLayer = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:upas_exploradas_201806',
+                transparent:true,
+                format: 'image/png'
+        });
+
+
+
+
+	
+	var pontos_wms = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/geifn/wms', {
+			layers: 'geifn:view_status_ponto',
+			transparent:true,
+			format: 'image/png'		
+		});
+		
+	var biomas_wms = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms', {
+			layers: 'CNFP_orig:Limites Biomas',
+			transparent:true,
+			format: 'image/png'		
+		});	
+
+
+        var ndvi16 = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:nasa_MOD_NDVI_16 ',
+                transparent:true,
+                format: 'image/png'             
+        });
+
+ var areafoliar = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:MOD15A2_E_LAI ',
+                transparent:true,
+                format: 'image/png'             
+        });
+
+ var chuva_mes = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:TRMM_3B43M ',
+                transparent:true,
+                format: 'image/png'             
+        });
+
+
+ var populacao = L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?', {
+                layers:'CNFP_orig:SEDAC_POP ',
+                transparent:true,
+                format: 'image/png'             
+        });
+
+        var ana_uph =  L.tileLayer.wms('https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms', {
+                        layers: 'CNFP_orig:ana_snirh_uph',
+                        transparent:true,
+                        format: 'image/png'
+                });    
+
+
+
+
+	var streets = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 20,
+		attribution: '  Serviço Florestal Brasileiro <a href="www.florestal.gov.br">SFB</a>'+' Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>' ,
+		id: 'mapbox.streets'
+	});
+
+		var grayscale   = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 20,
+		attribution: '  Serviço Florestal Brasileiro <a href="www.florestal.gov.br">SFB</a>'+' Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>' ,
+		id: 'mapbox.light'
+	});
+
+
+
+
+
+
+	var map = L.map('map', {
+		center: [-15, -55],
+		zoom: 5,
+ 		minZoom: 2,
+        	maxZoom: 20,
+		layers: [grayscale, streets]
+	});
+
+
+
+	var overlays = {
+                "CNFP-Flor.Publicas 2018": cnfp,
+		"SFB - Concessoes": concLayer,
+		"SFB - UPAs Exploradas": upaLayer,
+		"CAR - Imoveis Rurais" : car,
+		"CAR - Nascentes" : wmsLayer_nasc,
+                "CAR - Nasc. Class. RVN" : wmsLayer_nasc_c,
+                "CAR-Reman. de Vegetação": wmsLayer_rvn,
+                "CAR-Reserva Legal": wmsLayer_rl,
+                "CAR-Area de Pres. Permanente": wmsLayer_app,
+		"MAPA - ABC - Pontos": abc_pontos,
+		"MAPA - ABC - Imoveis CAR": abc_pt_car,
+		"MAPA - ABC - Buffer 1Km": abc_buffer,
+		"MAPA - ABC - Imoveis CAR 1km": abc_imoveis,                
+		"IBGE-Limites Estaduais": estados,
+                "IBGE-Biomas" : biomas_wms,
+ 		"IBGE-Limites Municipais": municipios,
+		"INCRA - Sigef": sigef,
+		"INCRA - SNCI": snci,
+		"Embrapa - Rodovias": emb_rodovias,
+                "Embrapa - Ferrovias": emb_ferrovia,
+		"Embrapa - Hidrovias": emb_hidrovia,
+                "Embrapa - Relevo": emb_relevo,
+		"Embrapa - Solos": emb_solos,
+		"Embrapa - Uso Solo": emb_uso_solo,
+  		"Embrapa - Precipitacao Anual": emb_prec_anual,
+  		"Embrapa - Pivos 2013": emb_pivos2013,
+		"ANA - Unid. Plan. Hidrico": ana_uph,
+		"Serfal/Sigef-Glebas Públicas": wms_glebas,
+                "CNFP-Flor. Publ. Destinadas": tipoA ,
+                "CNFP-Flor. Publ. Não Destinadas": tipoB ,
+                "CNFP-Terras Indígenas": cnfp_ti ,          
+                "CNFP-UCs Federais": cnfp_ucfed ,            
+                "CNFP-UCs Estaduais": cnfp_ucest, 
+                "IFN - Conglomerados" : pontos_wms,
+               }; 
+  var overlays2 = {
+                "CNFP-Flor.Publicas 2018": cnfp2018,
+                "CNFP-Flor.Publicas 2017": cnfp2017,
+                "CNFP-Flor.Publicas 2016": cnfp2016,
+                "CNFP-Flor.Publicas 2015": cnfp2015,
+                "CNFP-Flor.Publicas 2014": cnfp2014,
+
+                };
+
+
+ var overlays3 = {
+                "NASA-NDVI MODIS": ndvi16,
+                "NASA-Area Foliar": areafoliar,
+                "NASA-Chuva do Mes": chuva_mes,
+                "NASA-Dens. Populacao": populacao,
+		"CNFP e CAR": cadastros,
+                "CAR Ambiental-RVN/RL/APP": car_ambiental,
+
+
+	};
+
+        var baseLayers = {
+                "OSM-Ruas": streets,
+                "OSM-Tons de Cinza": grayscale,
+		"ESRI Arcgis base": wms_arcgis,
+
+        };
+
+        var baseLayers2 = {
+
+        };
+
+        var baseLayers3 = {
+
+        };
+
+
+
+
+
+
+var logo = L.control({position: 'topright'});
+    logo.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'logo');
+        div.innerHTML = "<a href='http://www.florestal.gov.br'><img src='https://sistemas.florestal.gov.br/mapas/logosfb_p.png' height='30px'/></a>";
+        return div;
+    };
+    logo.addTo(map);
+        L.control.layers(baseLayers, overlays).addTo(map);
+        L.control.layers(baseLayers, overlays2).addTo(map);
+        L.control.layers(baseLayers, overlays3).addTo(map);
+
+		
+    map.addLayer(cnfp);
+    map.addLayer(car);
+    map.addLayer(concLayer);
+
+uri = "https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?service=WMS&version=1.1.0&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=30&HEIGHT=35&layer=CNFP_orig:cnfp_2017",
+    L.wmsLegend(uri);
+uri = "https://sistemas.florestal.gov.br/geoserver/sfb_car/wms?service=WMS&version=1.1.0&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=30&HEIGHT=35&layer=sfb_car:atlas_26_imovel",
+    L.wmsLegend(uri);
+uri = "https://sistemas.florestal.gov.br/geoserver/CNFP_orig/wms?service=WMS&version=1.1.0&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=30&HEIGHT=35&layer=CNFP_orig:cnfp2016_concessoes",
+    L.wmsLegend(uri);
+
+
+</script>
+
+
+
+
+
+
+
+</body></html>
